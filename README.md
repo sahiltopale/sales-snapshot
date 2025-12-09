@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# Sales Dashboard
 
-## Project info
+A modern, responsive sales dashboard application built with React, TypeScript, and TailwindCSS. Features interactive charts powered by Recharts with the ability to switch between bar, line, and pie chart views.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Sales Dashboard](https://img.shields.io/badge/React-18.3-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-blue) ![Recharts](https://img.shields.io/badge/Recharts-2.15-green)
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 📊 **Interactive Charts** - Bar, Line, and Pie chart views
+- 🎯 **Sales Threshold Filter** - Filter data by minimum sales value
+- 📈 **Year-over-Year Comparison** - Compare sales across 2022, 2023, and 2024
+- 💡 **Summary Statistics** - Quick overview cards with growth indicators
+- 📱 **Fully Responsive** - Works on desktop, tablet, and mobile
+- 🎨 **Modern UI** - Clean design with smooth animations
 
-**Use Lovable**
+## Project Structure
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── atoms/           # Basic building blocks
+│   │   ├── Button.tsx   # Reusable button component
+│   │   └── Input.tsx    # Reusable input component
+│   ├── molecules/       # Composite components
+│   │   ├── ChartHeader.tsx   # Chart controls header
+│   │   └── StatCard.tsx      # Statistics card
+│   └── organisms/       # Complex components
+│       └── SalesChart.tsx    # Main chart component
+├── data/
+│   └── sales.ts         # Mock sales data
+├── pages/
+│   └── Dashboard.tsx    # Main dashboard page
+└── ...
 ```
 
-**Edit a file directly in GitHub**
+## Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **React 18** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool
+- **TailwindCSS** - Utility-first CSS framework
+- **Recharts** - Composable charting library
+- **Lucide React** - Beautiful icons
+- **React Router** - Client-side routing
 
-**Use GitHub Codespaces**
+## Getting Started
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Prerequisites
 
-## What technologies are used for this project?
+- Node.js 18+ installed
+- npm or yarn package manager
 
-This project is built with:
+### Installation
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd sales-dashboard
+   ```
 
-## How can I deploy this project?
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-## Can I connect a custom domain to my Lovable project?
+4. **Open your browser**
+   Navigate to `http://localhost:8080`
 
-Yes, you can!
+### Build for Production
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The built files will be in the `dist` folder.
+
+## Usage
+
+### Switching Chart Types
+Click on the chart type icons (bar, line, pie) in the header to switch between different visualizations.
+
+### Filtering Data
+Enter a minimum sales value in the threshold input to filter out months with lower sales numbers.
+
+### Understanding the Data
+- **2022**: Base year data
+- **2023**: Shows growth compared to 2022
+- **2024**: Shows continued growth with percentage increase
+
+## Mock Data
+
+Sales data is located in `src/data/sales.ts`. The data includes monthly sales figures for 2022, 2023, and 2024 with realistic seasonal patterns (higher sales in Q4/holiday season).
+
+## Customization
+
+### Adding New Years
+Update the `salesData` array in `src/data/sales.ts` and modify the chart components to include additional data keys.
+
+### Changing Colors
+Chart colors are defined in `src/index.css` using CSS variables:
+- `--chart-1`: 2022 data color (cyan)
+- `--chart-2`: 2023 data color (purple)
+- `--chart-3`: 2024 data color (green)
+
+## License
+
+MIT License - feel free to use this project for learning or commercial purposes.
