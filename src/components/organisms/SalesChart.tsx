@@ -87,7 +87,10 @@ const SalesChart = () => {
         return (
           <ResponsiveContainer width="100%" height={400}>
             <LineChart data={filteredData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="hsl(var(--border))"
+              />
               <XAxis
                 dataKey="month"
                 stroke="hsl(var(--muted-foreground))"
@@ -172,7 +175,10 @@ const SalesChart = () => {
         return (
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={filteredData} barCategoryGap="20%">
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="hsl(var(--border))"
+              />
               <XAxis
                 dataKey="month"
                 stroke="hsl(var(--muted-foreground))"
@@ -210,7 +216,7 @@ const SalesChart = () => {
   };
 
   return (
-    <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+    <div className="p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border/50 shadow-sm">
       <ChartHeader
         title="Sales Overview"
         subtitle="Monthly sales comparison across years"
@@ -219,7 +225,7 @@ const SalesChart = () => {
         threshold={threshold}
         onThresholdChange={setThreshold}
       />
-      <div className="mt-6">{renderChart()}</div>
+      <div className="mt-4 sm:mt-6 -mx-2 sm:mx-0">{renderChart()}</div>
     </div>
   );
 };
